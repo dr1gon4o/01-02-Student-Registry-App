@@ -17,14 +17,14 @@ jobs:
     steps:
     - name: clone the git repo
       uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 20
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 20
         cache: 'npm'
-    - name: install node js
+    - name: install node module
       run: npm install
     - name: start node js app
       run: npm start
-    - name: run tests js
+    - name: run tests
       run: npm test
