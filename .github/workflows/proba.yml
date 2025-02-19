@@ -22,6 +22,7 @@ jobs:
 
     - name: Install node modules
       run: npm install
-
+    - name: start the app
+      run: npm start
     - name: Run tests
       run: npm test
