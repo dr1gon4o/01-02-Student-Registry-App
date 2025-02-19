@@ -14,22 +14,17 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - name:
+    - name: clone the git repo
       uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name:
+    - name: install node js
       run: npm install
-    - name:
+    - name: install node js app
       run: npm start
-    - name:
+    - name: run tests js
       run: npm test
